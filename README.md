@@ -20,6 +20,21 @@ The Project was developed using the following environment:
 - Ability to use SCP and SSH
 - SBT should be installed in your system
 
+###Configuring the Project
++ I have created file called Plugins.sbt in Project folder and added following code
+```
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.1.0")
+```
++ In the build.sbt, I have added few lines of commands
+```
+assembly / assemblyMergeStrategy := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x => MergeStrategy.first
+}
+libraryDependencies += "org.apache.hadoop" % "hadoop-core" % "1.2.1"
+
+```
+
 ###Generating the Log Files
 1. Clone this repository.
 2. Browse to the Project directory and then import it to IntelliJ
@@ -74,6 +89,10 @@ hadoop jar <Jar File Name> MapReduce.Job4 <Input File Name> Output3.txt
 + Command to run this Job
 ```
 hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job1 LogFileGenerator.2021-10-20.log output25.txt
+```
++ Command to Fetch the Output
+```
+hadoop fs -cat output25.txt/part-r-00000
 ```
 + Sample output is shown below
 ```
@@ -191,6 +210,10 @@ WARN_16:09:58   3
 ```
 hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job2 LogFileGenerator.2021-10-20.log output30.txt
 ```
++ Command to Fetch the Output
+```
+hadoop fs -cat output30.txt/part-r-00000
+```
 + Sample output is shown below
 ```
 12:12:18        2                                                                                                                                                       
@@ -214,6 +237,10 @@ hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job2 LogFileGenerator.202
 ```
 hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job3 LogFileGenerator.2021-10-20.log output26.txt
 ```
++ Command to Fetch the Output
+```
+hadoop fs -cat output26.txt/part-r-00000
+```
 + Sample output is shown below
 ```
 DEBUG   207                                                                                                                                                             
@@ -229,6 +256,10 @@ WARN    405
 + command to run this Job:
 ```
 hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job4 LogFileGenerator.2021-10-20.log output27.txt
+```
++ Command to Fetch the Output
+```
+hadoop fs -cat output27.txt/part-r-00000
 ```
 + Sample output is shown below
 ```
