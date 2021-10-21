@@ -237,3 +237,7 @@ ERROR   140
 INFO    172                                                                                                                                                             
 WARN    161  
 ```
+
+##EMR DEPLOYMENT LINK
++ I have Explained and deployed jar and log to get output in AWS using S3 and EMR instances.
++  [Youtube link](https://www.youtube.com/watch?v=XwfIHrxU8JQ)
