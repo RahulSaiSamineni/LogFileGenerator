@@ -193,7 +193,17 @@ hadoop jar LogFileGenerator-assembly-0.1.jar MapReduce.Job2 LogFileGenerator.202
 ```
 + Sample output is shown below
 ```
-
+12:12:18        2                                                                                                                                                       
+15:09:37        2                                                                                                                                                       
+15:09:39        1                                                                                                                                                       
+16:09:40        2                                                                                                                                                       
+16:09:42        1                                                                                                                                                       
+16:09:46        1                                                                                                                                                       
+16:09:48        1                                                                                                                                                       
+16:09:49        1                                                                                                                                                       
+16:09:54        1                                                                                                                                                       
+16:09:55        2                                                                                                                                                       
+16:09:56        2 
 ```
 
 3. For each message type you will produce the number of the generated log messages
